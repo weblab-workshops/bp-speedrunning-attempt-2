@@ -11,6 +11,7 @@ import "../utilities.css";
 import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
+import HelloPage from "./pages/Hello.js";
 
 /**
  * Define the "App" component
@@ -48,6 +49,17 @@ const App = () => {
         path="/"
         element={
           <Skeleton
+            path="/"
+            handleLogin={handleLogin}
+            handleLogout={handleLogout}
+            userId={userId}
+          />
+        }
+      />
+      <Route
+        path="/hellopage"
+        element={
+          <HelloPage
             path="/"
             handleLogin={handleLogin}
             handleLogout={handleLogout}
