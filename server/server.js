@@ -40,6 +40,9 @@ const mongoConnectionURL =
 // TODO change database name to the name you chose
 const databaseName = "bp-speedrun";
 
+// mongoose 7 warning
+mongoose.set("strictQuery", false);
+
 // connect to mongodb
 mongoose
   .connect(mongoConnectionURL, {
@@ -53,6 +56,9 @@ mongoose
 // create a new express server
 const app = express();
 app.use(validator.checkRoutes);
+
+// allow us to process POST requests
+app.use(express.json());
 
 // set up a session, which will persist login data across requests
 app.use(
