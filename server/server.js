@@ -31,7 +31,7 @@ const path = require("path"); // provide utilities for working with file and dir
 const api = require("./api");
 const auth = require("./auth");
 
-require("dotenv").config();
+// require("dotenv").config();
 
 // socket stuff
 const socketManager = require("./server-socket");
